@@ -19,6 +19,7 @@ page 50110 PersonaCard
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Nombre field.';
+                    ShowMandatory = true;
                 }
                 field(Apellido; Rec.Apellido)
                 {

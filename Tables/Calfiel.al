@@ -23,6 +23,16 @@ table 50105 CalFiedlExample
             FieldClass = FlowField;
             CalcFormula = exist("Sales Invoice Header" where("Sell-to Contact No." = field("Customer No.")));
         }
+        field(4; "No. de Facturas"; Integer)
+        {
+            CalcFormula = count("Sales Header" where("Document Type" = const(Invoice),
+            "Sell-to Customer No." = field("Customer No.")));
+
+            FieldClass = FlowField;
+            Editable = false;
+            Caption = 'No. of Invoices';
+        }
+
     }
 
     keys

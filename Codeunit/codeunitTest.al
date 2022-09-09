@@ -81,17 +81,17 @@ codeunit 50100 MultipleCode
 
     procedure Myarray()
     var
-        SaleAmount: array[5] of Text[10];
+        Ciudades: array[5] of Text[10];
         num: Integer;
     begin
 
-        SaleAmount[1] := 'Madrid';
-        SaleAmount[2] := 'Bilbao';
-        SaleAmount[3] := 'Barcelona';
-        SaleAmount[4] := 'Sevilla';
-        SaleAmount[5] := 'Zaragoza';
-        for num := 1 to ArrayLen(SaleAmount) do begin
-            Message(Format(SaleAmount[num]));
+        Ciudades[1] := 'Madrid';
+        Ciudades[2] := 'Bilbao';
+        Ciudades[3] := 'Barcelona';
+        Ciudades[4] := 'Sevilla';
+        Ciudades[5] := 'Zaragoza';
+        for num := 1 to ArrayLen(Ciudades) do begin
+            Message(Format(Ciudades[num]));
         end;
 
     end;
@@ -115,7 +115,7 @@ codeunit 50100 MultipleCode
         MyArray1[9] := 'Girona';
         MyArray1[10] := 'Vigo';
 
-        //Copiamos desde el 3 en adelante solo 5 array
+        //Copiamos desde la posicion 3 en adelante y un maximo de 5 campos
         CopyArray(MyArray2, MyArray1, 3, 5);
 
         //recorremos el array
@@ -128,8 +128,8 @@ codeunit 50100 MultipleCode
     procedure MyLista()
     var
         rTabla: Record Customer;
-        stringList: List of [Text[30]];
-        stringItem: Text[30];
+        stringList: List of [Text[100]];
+        stringItem: Text[100];
 
     begin
         // Reseteamos la tabla para que no tenga ningun filtro
@@ -137,8 +137,8 @@ codeunit 50100 MultipleCode
         // Sacamos el contenido de la tabla y lo recorremos
         if rtabla.FindSet() then begin
             repeat begin
-                // Metemos el nombre del registro
-                stringItem := rTabla.Name;
+                // Metemos el nombre  y email del registro
+                stringItem := rTabla.Name + ' Email : ' + rTabla."E-Mail";
                 // Añadimos el nombre del registro a la lista
                 stringList.AddRange(stringItem);
             end
@@ -265,5 +265,63 @@ codeunit 50100 MultipleCode
         Message('Cliente insertado Correctamente.');
     end;
 
+    //Uso de calcfield
+    procedure UseCalcfield()
+
+    var
+        Texto000: Text;
+        CustRecordref: RecordRef;
+        MyFieldRef: FieldRef;
+        Count: Integer;
+
+
+    begin
+        Count := 0;
+        CustRecordref.OPEN(18);
+        Texto000 := '%1: \Saldo adeudado: %2';
+
+        IF CustRecordref.FIND('-') THEN
+            REPEAT
+                MyFieldRef := CustRecordref.FIELD(66);
+                MyFieldRef.CALCFIELD;
+                MESSAGE(Texto000, CustRecordref.RECORDID, MyFieldRef);
+                Count := Count + 1;
+            UNTIL CustRecordref.NEXT = 0;
+    end;
+
+    /*=======================
+    Contador de caracteres
+    ========================*/
+
+    procedure ContadorCaracteres()
+    var
+        customerName: Text;
+        contador: Dictionary of [Char, Integer];
+        rCustomer: Record Customer;
+        i: Integer;
+        c: Integer;
+
+
+
+    begin
+        rCustomer.Reset();
+        rCustomer.FindSet();
+        customerName := rCustomer.Name;
+
+        for i := 1 to StrLen(customerName) do begin
+            if contador.Get(customerName[i], c) then begin
+                contador.Set(customerName[i], c + 1);
+
+                Message('Total 1%', contador.Count);
+
+            end
+
+            else
+                contador.Add(customerName[i], 1);
+
+
+        end;
+
+    end;
 
 }//close codeunit

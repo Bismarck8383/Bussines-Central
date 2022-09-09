@@ -206,6 +206,30 @@ page 50101 ClientePeluList
                     Insertar.InsertaarDatos();
                 end;
             }
+            action(CalcF)
+            {
+                ApplicationArea = All;
+                Caption = 'Calcfiel';
+
+                trigger OnAction()
+                var
+                    UseCalc: Codeunit MultipleCode;
+                begin
+                    UseCalc.UseCalcfield();
+                end;
+            }
+            action(Contador)
+            {
+                ApplicationArea = All;
+                Caption = 'Contador';
+
+                trigger OnAction()
+                var
+                    contar: Codeunit MultipleCode;
+                begin
+                    contar.ContadorCaracteres();
+                end;
+            }
 
         }
     }

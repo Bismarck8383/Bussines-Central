@@ -87,6 +87,18 @@ page 50111 PersonaPageList
                     seleccion.LetUserChoose();
                 end;
             }
+            action(CalcField)
+            {
+                ApplicationArea = All;
+                Caption = 'Calcfiel';
+
+                trigger OnAction()
+                var
+                    UseCalc: Codeunit MultipleCode;
+                begin
+                    UseCalc.UseCalcfield();
+                end;
+            }
         }
     }
 

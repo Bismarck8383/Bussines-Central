@@ -14,6 +14,7 @@ table 50104 Persona
         {
             Caption = 'Nombre';
             DataClassification = CustomerContent;
+
         }
         field(3; Apellido; Text[30])
         {
@@ -59,4 +60,13 @@ table 50104 Persona
             Clustered = true;
         }
     }
+    fieldgroups
+    {
+        fieldgroup(DropDown; id, Nombre, Apellido) { }
+
+
+        fieldgroup(Brick; id, Nombre, Telefono, "Color Ojos") { }
+
+    }
+
 }

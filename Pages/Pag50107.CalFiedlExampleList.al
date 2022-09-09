@@ -28,6 +28,11 @@ page 50107 " CalFiedlExampleList"
                     ApplicationArea = all;
                     ToolTip = 'Especifica si el cliente tiene factura';
                 }
+                field("No. de Facturas"; Rec."No. de Facturas")
+                {
+                    ApplicationArea = all;
+                    ToolTip = 'Especifica el número de facturas';
+                }
             }
         }
     }

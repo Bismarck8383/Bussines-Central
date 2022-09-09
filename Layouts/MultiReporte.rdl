@@ -551,6 +551,12 @@ End Function
         <Field Name="CreditLimitLCYFormat">
           <DataField>CreditLimitLCYFormat</DataField>
         </Field>
+        <Field Name="DebitAmountLCY">
+          <DataField>DebitAmountLCY</DataField>
+        </Field>
+        <Field Name="DebitAmountLCYFormat">
+          <DataField>DebitAmountLCYFormat</DataField>
+        </Field>
         <Field Name="EMail">
           <DataField>EMail</DataField>
         </Field>
@@ -562,12 +568,6 @@ End Function
         </Field>
         <Field Name="Image">
           <DataField>Image</DataField>
-        </Field>
-        <Field Name="LastDateModified">
-          <DataField>LastDateModified</DataField>
-        </Field>
-        <Field Name="LastModifiedDateTime">
-          <DataField>LastModifiedDateTime</DataField>
         </Field>
         <Field Name="MobilePhoneNo">
           <DataField>MobilePhoneNo</DataField>

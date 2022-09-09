@@ -27,7 +27,7 @@ pageextension 50102 EmpleadoCardExtend extends "Employee Card"
                 var
                     EnviarEmail: Codeunit "TM Email functions";
                 begin
-                    EnviarEmail.SendFailureMail('AG');
+                    EnviarEmail.SendFailureMail();
                 end;
             }
         }
