@@ -1,4 +1,4 @@
-
+/*
 pageextension 50101 ClientePageExtend extends "Customer Card"
 {
     layout
@@ -31,3 +31,4 @@ pageextension 50101 ClientePageExtend extends "Customer Card"
     end;
 }
 
+*/

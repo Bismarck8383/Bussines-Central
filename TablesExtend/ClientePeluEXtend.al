@@ -1,4 +1,4 @@
-
+/*
 tableextension 50101 ClientePeluEXtend extends Customer
 {
     fields
@@ -10,3 +10,4 @@ tableextension 50101 ClientePeluEXtend extends Customer
         }
     }
 }
+*/

@@ -295,33 +295,14 @@ codeunit 50100 MultipleCode
 
     procedure ContadorCaracteres()
     var
-        customerName: Text;
-        contador: Dictionary of [Char, Integer];
         rCustomer: Record Customer;
-        i: Integer;
-        c: Integer;
-
-
-
     begin
         rCustomer.Reset();
         rCustomer.FindSet();
-        customerName := rCustomer.Name;
+        repeat
+            Message('Total Nombre : ' + rCustomer.Name + ' =  %1 ', StrLen(rCustomer.Name));
 
-        for i := 1 to StrLen(customerName) do begin
-            if contador.Get(customerName[i], c) then begin
-                contador.Set(customerName[i], c + 1);
-
-                Message('Total 1%', contador.Count);
-
-            end
-
-            else
-                contador.Add(customerName[i], 1);
-
-
-        end;
-
+        until rCustomer.Next() = 0;
     end;
 
 }//close codeunit

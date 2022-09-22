@@ -1,0 +1,30 @@
+.container {
+    width: 960px;
+    text-align: center;
+    font-size: 32px;
+    zoom: 0.5;
+  }
+  
+  .drop__container,
+  .drag__container {
+    display: flex;
+    margin-top: 40px;
+  }
+  
+  .drop__item,
+  .drag__item {
+    width: 240px;
+    height: 240px;
+    user-select: none;
+    margin: 0 40px;
+    text-align: center;
+  }
+  
+  .drop__item {
+    background-color: #d2691e;
+  }
+  
+  .drag__item {
+    background-color: #77d292;
+  }
+  

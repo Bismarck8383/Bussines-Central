@@ -31,7 +31,7 @@ table 50102 Citas
                 if xRec.Color <> Rec.Color then begin
                     ColorU.Reset();
                     if ColorU.get(Color) then begin
-                        Color := ColorU."Color Uñas";
+                        // Color := ColorU."Color Uñas";
                     end;
                 end;
             end;

@@ -9,7 +9,7 @@
             "server": "http://bclocal",
             "serverInstance": "BC",
             "authentication": "UserPassword",
-            "startupObjectId": 22,
+            "startupObjectId": 60100,
             "startupObjectType": "Page",
             "breakOnError": true,
             "launchBrowser": true,

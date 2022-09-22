@@ -23,9 +23,7 @@ report 50102 "Multi Reportes"
             {
             }
 
-            column(ColorUas; "Color Uñas")
-            {
-            }
+
             column(CountryRegionCode; "Country/Region Code")
             {
             }

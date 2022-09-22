@@ -524,9 +524,6 @@ End Function
         <Field Name="City">
           <DataField>City</DataField>
         </Field>
-        <Field Name="ColorUas">
-          <DataField>ColorUas</DataField>
-        </Field>
         <Field Name="CountryRegionCode">
           <DataField>CountryRegionCode</DataField>
         </Field>
